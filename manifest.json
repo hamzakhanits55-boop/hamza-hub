@@ -1,0 +1,13 @@
+{
+  "background_color": "#07111f",
+  "description": "Hamza Hub provides useful tools including an age calculator, quick notes, and a unit converter.",
+  "dir": "ltr",
+  "display": "standalone",
+  "name": "Hamza Hub",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "Hamza Hub",
+  "start_url": "/",
+  "theme_color": "#0ea5e9",
+  "id": "hamza-hub"
+}
