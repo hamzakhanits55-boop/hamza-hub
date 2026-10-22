@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamza Hub</title>
+    <meta name="description" content="Hamza Hub offers useful smart tools including an age calculator, quick notes, and a unit converter.">
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #07111f;
+        color: white;
+    }
+
+.app-header {
+    text-align: center;
+    padding: 35px 20px 20px;
+    background: linear-gradient(180deg, #102541, #07111f);
+}
+
+.app-logo {
+    width: 65px;
+    height: 65px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #0ea5e9, #2563eb);
+    border-radius: 20px;
+    font-size: 32px;
+    font-weight: bold;
+    box-shadow: 0 0 25px #0284c755;
+}
+
+.app-header h1 {
+    margin-top: 18px;
+    margin-bottom: 10px;
+}
+
+
+    h1 {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 32px;
+    }
+
+    p {
+        text-align: center;
+        color: #38bdf8;
+        font-size: 16px;
+    }
+
+.app-card {
+    background: linear-gradient(145deg, #13243b, #0c1829);
+    margin: 24px 20px;
+    padding: 28px 22px;
+    border: 1px solid #203b5d;
+    border-radius: 22px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+#tools {
+    max-width: 600px;
+    margin: 0 auto;
+    padding-bottom: 30px;
+}
+
+.app-card:hover {
+    transform: translateY(-4px);
+    border-color: #38bdf8;
+}
+
+    
+
+.app-card h2 {
+    color: #38bdf8;
+    margin-top: 0;
+    margin-bottom: 14px;
+    font-size: 23px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+}
+
+
+
+.app-card button {
+    background: linear-gradient(135deg, #0ea5e9, #2563eb);
+    color: #ffffff;
+    border: none;
+    padding: 13px 26px;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(14, 165, 233, 0.2);
+    transition: 0.25s ease;
+}
+.app-card input {
+    box-sizing: border-box;
+    max-width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    border: 1px solid #38bdf8;
+    background: #f1f5f9;
+    color: #07111f;
+    font-size: 16px;
+}
+footer {
+    text-align: center;
+    padding: 15px 10px;
+    border-top: 1px solid #203b5d;
+    background: #0c1829;
+}
+
+footer p {
+    color: #94a3b8;
+    font-size: 13px;
+    margin: 0;
+}
+
+.app-card button:hover {
+    transform: translateY(-2px);
+   box-shadow: 0 8px 22px rgba(14, 165, 233, 0.4);
+}
+@media (max-width: 480px) {
+    .app-header {
+        padding: 30px 15px 15px;
+    }
+
+    .app-logo {
+        width: 58px;
+        height: 58px;
+        font-size: 28px;
+        border-radius: 17px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    .app-card {
+        margin: 18px 14px;
+        padding: 24px 16px;
+        border-radius: 18px;
+    }
+
+    .app-card button {
+        max-width: 100%;
+    }
+}
+</style>
+</head>
+<body>
+
+    <div class="app-header">
+    <div class="app-logo">H</div>
+    <h1>Hamza Hub</h1>
+    <p>Your Smart Digital Space</p>
+</div>
+    <div class="app-card">
+    <h2>Smart Tools</h2>
+    <p>Everything you need, in one place.</p>
+    <button onclick="document.getElementById('tools').scrollIntoView({behavior: 'smooth'})">Explore Tools</button>
+</div>
+<div class="app-card">
+    <h2>My Portfolio</h2>
+    <p>Explore my personal website and projects.</p>
+    <a href="https://hamzakhanits55-boop.github.io/hamza-portfolio/" target="_blank" rel="noopener noreferrer">
+        <button>Visit My Portfolio</button>
+    </a>
+</div>
+<div id="tools">
+    <div class="app-card">
+        <h2>Age Calculator</h2>
+        <p>Calculate your age easily.</p>
+        <input type="date" id="birthDate">
+<button onclick="openAgeTool()">Calculate Age</button>
+    </div>
+
+    <div class="app-card">
+        <h2>Quick Notes</h2>
+        <p>Keep your important notes.</p>
+        <button onclick="openNotes()">Open Tool</button>
+    </div>
+
+    <div class="app-card">
+        <h2>Unit Converter</h2>
+        <p>Convert measurements quickly.</p>
+        <button onclick="openConverter()">Open Tool</button>
+    </div>
+</div>
+<footer>
+    <p>© 2026 Hamza Hub. All rights reserved.</p>
+</footer>
+<script>
+    function openAgeTool() {
+    let birthDate = document.getElementById("birthDate").value;
+    if (!birthDate) {
+    alert("Please select your date of birth!");
+    return;
+}
+
+    let birth = new Date(birthDate);
+    let today = new Date();
+
+    if (isNaN(birth.getTime()) || birth > today) {
+        alert("Please enter a valid date of birth.");
+        return;
+    }
+
+    let age = today.getFullYear() - birth.getFullYear();
+
+    if (
+        today.getMonth() < birth.getMonth() ||
+        (today.getMonth() === birth.getMonth() &&
+         today.getDate() < birth.getDate())
+    ) {
+        age--;
+    }
+
+    alert("Your age is " + age + " years!");
+}
+function openNotes() {
+    let savedNote = localStorage.getItem("hamzaNote");
+if (savedNote) {
+    alert("Your saved note: " + savedNote);
+}
+    let note = prompt("Write your note:");
+if (note !== null && note.trim() !== "") {
+    localStorage.setItem("hamzaNote", note);
+    alert("Note saved successfully!");
+} else if (note !== null) {
+    alert("Note cannot be empty!");
+}
+}
+function openConverter() {
+    let choice = prompt("Type 1 for Kilometers to Miles, or 2 for Miles to Kilometers:");
+
+if (choice === "2") {
+    let miles = prompt("Enter distance in miles:");
+    if (miles !== null && miles.trim() !== "" && !isNaN(miles) && Number(miles) >= 0) {
+        alert(miles + " miles = " + (Number(miles) * 1.60934).toFixed(2) + " kilometers");
+    } else if (miles !== null) {
+        alert("Please enter a valid number.");
+    }
+    return;
+}
+
+let km = prompt("Enter distance in kilometers:");
+    if (km !== null && km.trim() !== "" && !isNaN(km) && Number(km) >= 0) {
+        let miles = Number(km) * 0.621371;
+        alert(km + " kilometers = " + miles.toFixed(2) + " miles");
+    } else if (km !== null) {
+        alert("Please enter a valid number.");
+    }
+}
+</script>
+
+</body>
+</html>
