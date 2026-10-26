@@ -1,9 +1,8 @@
-
 {
   "id": "/hamza-hub/",
-  "name": "Hamza Hub",
-  "short_name": "Hamza Hub",
-  "description": "Hamza Hub provides useful tools including an age calculator, quick notes, and a unit converter.",
+  "name": "Age Calculator",
+  "short_name": "Age Calc",
+  "description": "A simple age calculator to calculate your age easily.",
   "lang": "en",
   "dir": "ltr",
   "start_url": "/hamza-hub/",
