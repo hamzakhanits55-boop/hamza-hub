@@ -1,7 +1,7 @@
 {
   "id": "/hamza-hub/",
   "name": "Age Calculator",
-  "short_name": "Age Calc",
+  "short_name": "Age Calculator",
   "description": "A simple age calculator to calculate your age easily.",
   "lang": "en",
   "dir": "ltr",
